@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opiskelijaravintolat</title>
+    <link rel="stylesheet" href="ravintola.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Suomen Opiskelijaravintolat</h1>
+      <p>
+        Selaa ravintoloita ja näe niiden päivittäiset ja viikoittaiset
+        ruokalistat.
+      </p>
+    </header>
+
+    <main>
+      <section id="restaurant-list" class="card-container">
+        <!-- Ravintolalista lisätään tänne API:sta -->
+        <article class="card">
+          <h2>Ravintola Esimerkki</h2>
+          <p>Kaupunki: Helsinki</p>
+          <button class="menu-btn" onclick="showMenu('Esimerkki')">
+            Näytä ruokalista
+          </button>
+        </article>
+      </section>
+
+      <section id="menu-section" class="menu hidden">
+        <h2>Ruokalista: <span id="restaurant-name">Esimerkki</span></h2>
+
+        <div class="menu-buttons">
+          <button onclick="showDayMenu()">Päivän ruokalista</button>
+          <button onclick="showWeekMenu()">Viikon ruokalista</button>
+        </div>
+
+        <div id="menu-content">
+          <p>Tähän tulee ruokalistan sisältö API:sta.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Opiskelijaravintolat-sovellus</p>
+    </footer>
+
+    <script>
+      // Placeholder for API logic
+      function showMenu(name) {
+        document.getElementById("menu-section").classList.remove("hidden");
+        document.getElementById("restaurant-name").textContent = name;
+        document.getElementById("menu-content").innerHTML =
+          "<p>Ladataan ruokalista...</p>";
+      }
+
+      function showDayMenu() {
+        document.getElementById("menu-content").innerHTML =
+          "<p>Päivän ruokalista (API-data tähän)</p>";
+      }
+
+      function showWeekMenu() {
+        document.getElementById("menu-content").innerHTML =
+          "<p>Viikon ruokalista (API-data tähän)</p>";
+      }
+    </script>
+  </body>
+</html>
