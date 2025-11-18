@@ -1,53 +1,55 @@
+/* Base font and spacing */
+html {
+  font-size: 16px; /* 1rem = 16px default */
+}
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+#addBtn {
+  margin-bottom: 1.5rem;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
   padding: 0;
-  width: 15rem;
 }
 
 li {
-  border: 1px solid #000;
+  list-style: none;
+  margin: 0.5rem 0;
   display: flex;
-  justify-content: flex-end;
-  line-height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-label {
-  display: block;
-  width: 100%;
-  padding-left: 1rem;
-}
-
-li button {
-  width: 2rem;
-  height: 3rem;
-  background-color: rgb(255, 0, 0);
-  color: #fff;
+/* Dialog modal styling */
+dialog {
   border: none;
-  cursor: pointer;
-  position: absolute;
+  border-radius: 0.5rem;
+  padding: 0;
+  width: 80%;
+  max-width: 30rem;
 }
 
-li input {
-  position: absolute;
-  margin: 1rem 3rem;
-  cursor: pointer;
+#modalContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-li input[type='checkbox']:checked + label {
-  background-color: rgb(146, 208, 136);
-  font-weight: bold;
-}
-
-.add-btn {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: rgb(80, 80, 168);
-  color: #fff;
-  border: none;
-  cursor: pointer;
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }

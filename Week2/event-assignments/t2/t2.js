@@ -770,4 +770,42 @@ const restaurants = [
   },
 ];
 
-// your code here
+restaurants.sort((a, b) => a.name.localeCompare(b.name));
+
+const restaurantList = document.getElementById('restaurantList');
+const restaurantModal = document.getElementById('restaurantModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalPostal = document.getElementById('modalPostal');
+const modalCity = document.getElementById('modalCity');
+const modalAddress = document.getElementById('modalAddress');
+const modalPhone = document.getElementById('modalPhone');
+const modalCompany = document.getElementById('modalCompany');
+const closeModalBtn = document.getElementById('closeModal');
+
+restaurants.forEach(restaurant => {
+  const li = document.createElement('li');
+  li.textContent = `${restaurant.name} - ${restaurant.address}`;
+
+  li.addEventListener('click', () => {
+    // remove highlight from all list items (scope to the list)
+    document
+      .querySelectorAll('#restaurantList li')
+      .forEach(el => el.classList.remove('highlight'));
+    li.classList.add('highlight');
+
+    modalTitle.textContent = restaurant.name;
+    modalPostal.textContent = `Postal Code: ${restaurant.postalCode}`;
+    modalCity.textContent = `City: ${restaurant.city}`;
+    modalAddress.textContent = `Address: ${restaurant.address}`;
+    modalPhone.textContent = `Phone: ${restaurant.phone}`;
+    modalCompany.textContent = `Company: ${restaurant.company}`;
+
+    restaurantModal.showModal();
+  });
+
+  restaurantList.appendChild(li);
+});
+
+closeModalBtn.addEventListener('click', () => {
+  restaurantModal.close();
+});

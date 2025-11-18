@@ -1,26 +1,55 @@
 body {
-  background-color: #f0f0f0;
-  font-family: sans-serif;
-  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+ul {
   padding: 0;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 0;
+li {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background 0.2s;
+}
+
+/* Highlight class for selected restaurant */
+.highlight {
+  background-color: #f0c040;
+  font-weight: bold;
+}
+
+/* Modal styling */
+dialog {
+  border: none;
+  border-radius: 0.5rem;
   padding: 0;
+  width: 90%;
+  max-width: 30rem;
 }
 
-th {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
-  font-weight: normal;
-  padding: 0.5em 1em;
-  text-align: left;
+#modalContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-td {
-  border-bottom: 1px solid #ccc;
-  padding: 0.5em 1em;
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  align-self: flex-start;
 }
